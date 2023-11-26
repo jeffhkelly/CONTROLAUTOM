@@ -20,7 +20,14 @@ function calcularCusto() {
     var vidaUtilPneuTraseiro = parseFloat(document.getElementById("vidaUtilPneuTraseiro").value);
     var gastosPessoais = parseFloat(document.getElementById("gastosPessoais").value);
 
-    // Realize os cálculos desejados aqui
+    // Cálculo do gasto com combustível
+    var gastoCombustivel = (km / consumoKmPorLitro) * valorLitro;
+
+    // Cálculo do gasto médio de pneus
+    var gastoMedioPneus = (vidaUtilPneuDianteiro + vidaUtilPneuTraseiro) / 2;
+
+    // Cálculo do gasto total diário
+    var gastoTotalDiario = gastoCombustivel + valorRegularizacaoAnual + gastoMedioPneus + gastosPessoais;
 
     var resultado = document.getElementById("resultado");
     // Atualize o elemento "resultado" com o resultado dos cálculos
