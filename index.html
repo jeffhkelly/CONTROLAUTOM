@@ -2,49 +2,7 @@
 <html>
 <head>
     <title>Calculadora de Custo de Óleo</title>
-     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-
-        h1 {
-            color: #333;
-        }
-
-        label {
-            display: block;
-            margin: 10px;
-            font-weight: bold;
-        }
-
-        input[type="number"] {
-            width: 100px;
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
-        #resultado {
-            font-weight: bold;
-            margin-top: 10px;
-            font-size: 18px;
-            color: #007bff;
-        }
-    </style>
+  <link rel="stylesheet" type="text/css" href="estilo.css">
 </head>
 <body>
     <h1>Calculadora de Custo de Óleo</h1>
@@ -58,20 +16,7 @@
     <button onclick="calcularCusto()">Calcular Custo</button><br>
     
     <p id="resultado"></p>
+      <script src="script.js"></script>
     
-    <script>
-        function calcularCusto() {
-            var km = parseFloat(document.getElementById("km").value);
-            var valorLitro = parseFloat(document.getElementById("valorLitro").value);
-            
-            if (isNaN(km) || isNaN(valorLitro)) {
-                alert("Por favor, preencha todos os campos com valores numéricos.");
-            } else {
-                // Calcula o custo de óleo com base na quilometragem
-                var custoTotal = (km / 1000) * valorLitro;
-                document.getElementById("resultado").innerHTML = "Custo de óleo: R$ " + custoTotal.toFixed(2);
-            }
-        }
-    </script>
 </body>
 </html>
