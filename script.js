@@ -15,9 +15,12 @@ function calcularCusto() {
     var km = parseFloat(document.getElementById("km").value);
     var valorLitro = parseFloat(document.getElementById("valorLitro").value);
     var consumoKmPorLitro = parseFloat(document.getElementById("consumoKmPorLitro").value);
-    var valorRegularizacaoAnual = parseFloat(document.getElementById("valorRegularizacaoAnual").value);
     var vidaUtilPneuDianteiro = parseFloat(document.getElementById("vidaUtilPneuDianteiro").value);
+    var valorPneuDianteiro = parseFloat(document.getElementById("valorPneuDianteiro").value);
+    var gastoMedioPneuDianteiro = parseFloat(document.getElementById("gastoMedioPneuDianteiro").value
     var vidaUtilPneuTraseiro = parseFloat(document.getElementById("vidaUtilPneuTraseiro").value);
+    var valorPneuTraseiro = parseFloat(document.getElementById("valorPneuTraseiro").value);
+    var gastoMedioPneuTraseiro = parseFloat(document.getElementById("gastoMedioPneuTraseiro").value);
     var gastosPessoais = parseFloat(document.getElementById("gastosPessoais").value);
 
     // Cálculo do gasto com combustível
@@ -26,11 +29,14 @@ function calcularCusto() {
      // Cálculo do gasto com oleo
     var gastooleo = (km / consumoKmPorLitrooleo) * valorLitrooleo;
 
-    // Cálculo do gasto médio de pneus
-    var gastoMedioPneus = (vidaUtilPneuDianteiro + vidaUtilPneuTraseiro) / 2;
+       // Cálculo do gasto médio de pneu dianteiro
+    var gastoMedioPneuDianteiro = (km / vidaUtilPneuDianteiro) * valorPneuDianteiro;
 
+     // Cálculo do gasto médio de pneu traseiro
+     var gastoMedioPneuTraseiro = (km / vidaUtilPneuTraseiro) * valorPneuTraseiro;
+    
     // Cálculo do gasto total diário
-    var gastoTotalDiario = gastoCombustivel + valorRegularizacaoAnual + gastoMedioPneus + gastosPessoais;
+    var gastoTotalDiario = gastoCombustivel + gastooleo + gastoMedioPneuTraseiro  + gastoMedioPneuDianteiro + gastosPessoais
 
     var resultado = document.getElementById("resultado");
       resultado.innerHTML = "Gasto Total Diário: R$" + gastoTotalDiario.toFixed(2);
