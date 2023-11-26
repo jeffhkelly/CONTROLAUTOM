@@ -15,6 +15,9 @@ function calcularCusto() {
     var km = parseFloat(document.getElementById("km").value);
     var valorLitro = parseFloat(document.getElementById("valorLitro").value);
     var consumoKmPorLitro = parseFloat(document.getElementById("consumoKmPorLitro").value);
+    var valorLitrooleo = parseFloat(document.getElementById("valorLitrooleo").value);
+    var consumoKmPorLitrooleo = parseFloat(document.getElementById("consumoKmPorLitrooleo").value);
+    
     var vidaUtilPneuDianteiro = parseFloat(document.getElementById("vidaUtilPneuDianteiro").value);
     var valorPneuDianteiro = parseFloat(document.getElementById("valorPneuDianteiro").value);
     
@@ -30,15 +33,15 @@ function calcularCusto() {
     var gastooleo = (km / consumoKmPorLitrooleo) * valorLitrooleo;
 
        // Cálculo do gasto médio de pneu dianteiro
-    var gastoMedioPneuDianteiro = valorPneuDianteiro / vidaUtilPneuDianteiro;
+       var gastoMedioPneuDianteiro =  ( km / vidaUtilPneuDianteiro )  * valorPneuDianteiro  ;
 
     // Cálculo do gasto médio de pneu traseiro
-    var gastoMedioPneuTraseiro = valorPneuTraseiro / vidaUtilPneuTraseiro;
+      var gastoMedioPneuTraseiro =  ( km / vidaUtilPneuTraseiro ) * valorPneuTraseiro ;
     
     // Cálculo do gasto total diário
-    var gastoTotalDiario = gastoCombustivel + gastooleo + gastoMedioPneuTraseiro  + gastoMedioPneuDianteiro + gastosPessoais
+      var gastoTotalDiario = gastoCombustivel + gastooleo  + gastoMedioPneuDianteiro + gastoMedioPneuTraseiro + gastosPessoais;
 
     var resultado = document.getElementById("resultado");
       resultado.innerHTML = "Gasto Total Diário: R$" + gastoTotalDiario.toFixed(2);
-    // Atualize o elemento "resultado" com o resultado dos cálculos
+    
 }
