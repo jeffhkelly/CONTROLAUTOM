@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Custo de Óleo</title>
+</head>
+<body>
+    <h1>Calculadora de Custo de Óleo</h1>
+    
+    <label for="km">Quilometragem (km):</label>
+    <input type="number" id="km"><br>
+    
+    <label for="valorLitro">Valor por Litro de Óleo (R$):</label>
+    <input type="number" id="valorLitro"><br>
+    
+    <button onclick="calcularCusto()">Calcular Custo</button><br>
+    
+    <p id="resultado"></p>
+    
+    <script>
+        function calcularCusto() {
+            var km = parseFloat(document.getElementById("km").value);
+            var valorLitro = parseFloat(document.getElementById("valorLitro").value);
+            
+            if (isNaN(km) || isNaN(valorLitro)) {
+                alert("Por favor, preencha todos os campos com valores numéricos.");
+            } else {
+                // Calcula o custo de óleo com base na quilometragem
+                var custoTotal = (km / 1000) * valorLitro;
+                document.getElementById("resultado").innerHTML = "Custo de óleo: R$ " + custoTotal.toFixed(2);
+            }
+        }
+    </script>
+</body>
+</html>
