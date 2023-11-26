@@ -17,10 +17,10 @@ function calcularCusto() {
     var consumoKmPorLitro = parseFloat(document.getElementById("consumoKmPorLitro").value);
     var vidaUtilPneuDianteiro = parseFloat(document.getElementById("vidaUtilPneuDianteiro").value);
     var valorPneuDianteiro = parseFloat(document.getElementById("valorPneuDianteiro").value);
-    var gastoMedioPneuDianteiro = parseFloat(document.getElementById("gastoMedioPneuDianteiro").value
+    
     var vidaUtilPneuTraseiro = parseFloat(document.getElementById("vidaUtilPneuTraseiro").value);
     var valorPneuTraseiro = parseFloat(document.getElementById("valorPneuTraseiro").value);
-    var gastoMedioPneuTraseiro = parseFloat(document.getElementById("gastoMedioPneuTraseiro").value);
+   
     var gastosPessoais = parseFloat(document.getElementById("gastosPessoais").value);
 
     // Cálculo do gasto com combustível
@@ -30,10 +30,10 @@ function calcularCusto() {
     var gastooleo = (km / consumoKmPorLitrooleo) * valorLitrooleo;
 
        // Cálculo do gasto médio de pneu dianteiro
-    var gastoMedioPneuDianteiro = (km / vidaUtilPneuDianteiro) * valorPneuDianteiro;
+    var gastoMedioPneuDianteiro = valorPneuDianteiro / vidaUtilPneuDianteiro;
 
-     // Cálculo do gasto médio de pneu traseiro
-     var gastoMedioPneuTraseiro = (km / vidaUtilPneuTraseiro) * valorPneuTraseiro;
+    // Cálculo do gasto médio de pneu traseiro
+    var gastoMedioPneuTraseiro = valorPneuTraseiro / vidaUtilPneuTraseiro;
     
     // Cálculo do gasto total diário
     var gastoTotalDiario = gastoCombustivel + gastooleo + gastoMedioPneuTraseiro  + gastoMedioPneuDianteiro + gastosPessoais
