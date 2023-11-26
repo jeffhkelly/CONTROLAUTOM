@@ -2,41 +2,45 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
+      background-image: url('oficina.jpg');
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 h1 {
-    color:#992f2fe4;
+      color: hsl(41, 71%, 52%);
 }
 
 label {
     display: block;
-    margin: 10px;
+    margin: 5px;
     font-weight: bold;
+    color: hsl(30, 100%, 50%);
 }
 
 input[type="number"] {
     width: 100px;
     padding: 5px;
-    border: 1px solid #ccc;
+    border: 3px solid hsl(47, 82%, 46%) ;
     border-radius: 5px;
 }
 
 button {
     padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
+    background-color:hsl(53, 80%, 54%);
+    color: hsl(40, 91%, 29%);
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: hsl(47, 100%, 70%);
 }
 
 #resultado {
     font-weight: bold;
     margin-top: 10px;
     font-size: 18px;
-    color: #007bff;
+    color: hsl(0, 84%, 54%);
 }
