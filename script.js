@@ -23,6 +23,9 @@ function calcularCusto() {
     // Cálculo do gasto com combustível
     var gastoCombustivel = (km / consumoKmPorLitro) * valorLitro;
 
+     // Cálculo do gasto com oleo
+    var gastooleo = (km / consumoKmPorLitrooleo) * valorLitrooleo;
+
     // Cálculo do gasto médio de pneus
     var gastoMedioPneus = (vidaUtilPneuDianteiro + vidaUtilPneuTraseiro) / 2;
 
@@ -30,5 +33,6 @@ function calcularCusto() {
     var gastoTotalDiario = gastoCombustivel + valorRegularizacaoAnual + gastoMedioPneus + gastosPessoais;
 
     var resultado = document.getElementById("resultado");
+      resultado.innerHTML = "Gasto Total Diário: R$" + gastoTotalDiario.toFixed(2);
     // Atualize o elemento "resultado" com o resultado dos cálculos
 }
