@@ -1,4 +1,4 @@
-// script.js
+script.js
 function calcularCusto() {
     var km = parseFloat(document.getElementById("km").value);
     var valorLitro = parseFloat(document.getElementById("valorLitro").value);
